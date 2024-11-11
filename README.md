@@ -24,21 +24,21 @@ The OAuth Login System is a secure and efficient method for handling user authen
    pip3 install Flask requests
    
 2. **Generate SSL Certificates**
-mkdir ~/certs && cd ~/certs
-openssl genrsa -out privatekey.pem 2048
-openssl req -new -key privatekey.pem -out csr.pem
-openssl x509 -req -days 365 -in csr.pem -signkey privatekey.pem -out certificate.pem
+```mkdir ~/certs && cd ~/certs
+   openssl genrsa -out privatekey.pem 2048
+   openssl req -new -key privatekey.pem -out csr.pem
+   openssl x509 -req -days 365 -in csr.pem -signkey privatekey.pem -out certificate.pem
 
 3. **Configure the Application Update app.py:**
-AUTH_SERVER: OAuth provider’s authorization server URL.
-CLIENT_ID and CLIENT_SECRET: OAuth credentials.
-REDIRECT_URI: Must match URI registered with OAuth provider.
+```AUTH_SERVER: OAuth provider’s authorization server URL.
+```CLIENT_ID and CLIENT_SECRET: OAuth credentials.
+```REDIRECT_URI: Must match URI registered with OAuth provider.
 
 4.**Run the Application**
-bash
-Copy code
-sudo python3 app.py
+```bash
+   Copy code
+   sudo python3 app.py
 
 5.**Access the Application**
-Go to http://127.0.0.1:8000/login in a web browser to start the login process.
-Navigate to http://127.0.0.1:8000/profile after login to view user profile data.
+```Go to http://127.0.0.1:8000/login in a web browser to start the login process.
+```Navigate to http://127.0.0.1:8000/profile after login to view user profile data.
